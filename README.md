@@ -1,4 +1,4 @@
-FoundryBlog
-===========
+Foundery
+========
 
-Blog example
+NimbusBase Foundery

@@ -33,6 +33,25 @@ function define_controller(){
       };
     });
 
+    // config object
+    $scope.blog_config = {
+      fields : {
+         title : {
+           type : 'input',
+           label : 'Title'
+         },
+         content : {
+           type : 'input',
+           label : 'Content'
+         }
+      },
+      create : "create()"
+      update : "update()"
+    };
+
+    $scope.entry_data = null;
+    $scope.mode = 'create';
+
     $scope.load = function(){
         $scope.entries = blog_model.all()
     }

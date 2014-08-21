@@ -5,15 +5,19 @@
 
     <div class="container">
         <div class="row-fluid">
-            <button class="btn btn-primary" ng-click="add_todo()">Add Blog</button>
+            <button class="btn btn-primary" ng-click="show_create()">Add Blog</button>
             <hr>
             <ul class="todo-list">
-            	<li ng-repeat="entry in entries">
-            		<span ng-bind="entry.title"></span>
-            		<a href="" ng-click="delete_entry($index)">
-            		   <i class="icon icon-remove"></i>
-            		</a>
-            	</li>
+                <li ng-repeat="entry in entries">
+                    <h4 ng-bind="entry.title"></h4>
+                    <span ng-bind="entry.content"></span>
+                    <a href="" ng-click="show_edit(entries[$index])">
+                       <i class="icon icon-edit"></i>
+                    </a>
+                    <a href="" ng-click="delete_entry($index)">
+                       <i class="icon icon-remove"></i>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

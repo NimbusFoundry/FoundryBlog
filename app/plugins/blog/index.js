@@ -25,7 +25,7 @@ function define_controller(){
   angular.module('foundry').controller('BlogController', ['$scope', function($scope){
     $scope.entries = [];
     // get a reference with the model we registered above
-    blog_model = foundry._models.Blog;
+    blog_model = foundry._models.Entry;
     blog_model.onUpdate(function(mode, obj, isLocal){
       if (!isLocal) {
         $scope.load();
@@ -45,18 +45,57 @@ function define_controller(){
            label : 'Content'
          }
       },
-      create : "create()"
+      create : "create()",
       update : "update()"
     };
 
-    $scope.entry_data = null;
+    $scope.entry_data = {
+      title : '',
+      content : ''
+    };
     $scope.mode = 'create';
 
     $scope.load = function(){
         $scope.entries = blog_model.all()
     }
 
-    $scope.delete_todo = function(index){
+    $scope.show_create = function(){
+      $scope.entry_data = {};
+      $scope.mode = 'create';
+      $('.create').modal('show')
+    }
+
+    $scope.create = function(){
+      if ($scope.entry_data.title) {
+        blog_model.create($scope.entry_data)
+        $scope.load();
+        // body...
+        $('.modal').modal('hide');
+      };
+    }
+
+    $scope.clear = function(){
+      $scope.entry_data = {};
+      $('.modal').modal('hide');
+    }
+
+    $scope.show_edit = function(blog){
+      $scope.entry_data = blog;
+      $scope.mode = 'edit';
+      $('.create').modal('show');
+
+    };
+
+    $scope.update = function(){
+      // body...
+      var entry = blog_model.findByAttribute('id', $scope.entry_data.id);
+      entry.updateAttributes($scope.entry_data);
+      $scope.load();
+
+      $('.modal').modal('hide');
+    }
+
+    $scope.delete_entry = function(index){
         var id = $scope.entries[index].id,
             entry =blog_model.findByAttribute('id', id);
 

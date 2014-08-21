@@ -1,3 +1,15 @@
+<style>
+.todo.list{
+    list-style: none;
+}
+.todo-list h4{ 
+   font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.todo-list h4 + span{
+    color : #999;
+}
+</style>
+
 <div ng-controller="BlogController">
     <div class="breadcrumb">
         <h1>Blog App</h1>
@@ -29,7 +41,7 @@
               <button type="button" class="close" aria-hidden="true" ng-click="clear()">
                 &times;
               </button>
-              <h4 class="modal-title">Add Post</h4>
+              <h4 class="modal-title">Blog entry</h4>
             </div>
             <div class="modal-body">
               <model-form model-name="blog_config" form-mode="mode" instance-name="entry_data"></model-form>

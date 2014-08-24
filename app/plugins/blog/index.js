@@ -25,7 +25,7 @@ function define_controller(){
   angular.module('foundry').controller('BlogController', ['$scope', function($scope){
     $scope.entries = [];
     // get a reference with the model we registered above
-    blog_model = foundry._models.Blog;
+    blog_model = foundry._models.Entry;
     blog_model.onUpdate(function(mode, obj, isLocal){
       if (!isLocal) {
         $scope.load();

@@ -37,7 +37,7 @@ function define_controller(){
         $scope.entries = blog_model.all()
     }
 
-    $scope.delete_todo = function(index){
+    $scope.delete_entry = function(index){
         var id = $scope.entries[index].id,
             entry =blog_model.findByAttribute('id', id);
 

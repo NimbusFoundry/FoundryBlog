@@ -40,16 +40,8 @@ function define_controller(){
            type : 'input',
            label : 'Title'
          },
-         publish:{
-          type:'select',
-          label: 'Publish',
-          options:{
-            'Publish' : 1,
-            'Draft': 0
-          }
-         },
          content : {
-           type : 'text',
+           type : 'input',
            label : 'Content'
          }
       },

@@ -3,7 +3,7 @@ FoundryBlog
 
 This is a demo project for this tutorial: [http://nimbusfoundry.com/modeldoc.html](http://nimbusfoundry.com/modeldoc.html).
 
-# First step
+# How to do it?
 
 #### clone the start branch
 

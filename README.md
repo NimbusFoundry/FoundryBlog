@@ -5,7 +5,7 @@ This is a demo project for this tutorial: [http://nimbusfoundry.com/modeldoc.htm
 
 # How to do it?
 
-#### clone the start branch
+####Clone the start branch
 
 Clone the repository to a local folder, then checkout the start branch.
 

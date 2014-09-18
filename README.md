@@ -40,7 +40,7 @@ $scope.mode='create';
 
  Also the html part.
 
- ```
+ ``` html
 <div class="create modal fade nimbus_form_modal large-modal">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -58,7 +58,7 @@ $scope.mode='create';
 </div>
  ```
 ####Setup angular controller
-```
+``` javascript
 $scope.show_create = function(){
   $scope.entry_data = {};
   $scope.mode = 'create';
@@ -95,6 +95,9 @@ $scope.update = function(){
   $('.modal').modal('hide');
 }
 ```
+
+####Run this from your local server
+You can compare this to the finish branch to see if you have missed any code, and run a python httpsimpleserver at the root directory.
 
 # Support
 
